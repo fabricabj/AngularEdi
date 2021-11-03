@@ -14,13 +14,13 @@ export class UsuariosService {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
-    return this.http.post("http://localhost:444/login/", user, {'headers': headers});
+    return this.http.post("https://colavellabackend.herokuapp.com/login/", user, {'headers': headers});
   }
 
   registro(user : any): Observable<any> {
     const headers = new HttpHeaders()
     .set('content-type', 'application/json')
     .set('Access-Control-Allow-Origin', '*');
-    return this.http.post("http://localhost:444/", user, {'headers': headers})
+    return this.http.post("https://colavellabackend.herokuapp.com/", user, {'headers': headers})
   }
 }
