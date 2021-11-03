@@ -11,16 +11,45 @@
     >
       <img src="{{ peli.imagen }}" class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">{{ peli.titulo }}</h5>
-        <p class="card-text">{{ peli.descripcion }}</p>
-        <p class="card-text">{{ peli.anio }}</p>
+        <h5 class="card-title">Titulo: {{ peli.titulo }}</h5>
+        <p class="card-text">Descripcion: {{ peli.descripcion }}</p>
+        <p class="card-text">Año: {{ peli.anio }}</p>
+        <p class="card-text">Duracion: {{ peli.duracion }}</p>
+        <p class="card-text">Puntaje: {{ peli.puntaje }}</p>
         <a href="#" class="btn btn-primary m-2">Editar</a>        
-          <button type="button" (click)="borrarConfirm(peli.id_pelicula)" class="btn btn-danger" data-toggle="modal" data-target="#eliminarPelicula">
-            Eliminar
-          </button>
+          <a class="btn btn-dark" href="#" data-toggle="modal" data-target="#eliminarPelicula" (click)="borrarConfirm(peli.id_pelicula)">Eliminar</a>
       </div>
-
-      <div class="modal fade" id="eliminarPelicula" tabindex="-1" role="dialog" aria-labelledby="eliminarPelicula" aria-hidden="true">
+      <div data-backdrop="static"  class="modal fade" id="eliminarPelicula">
+        <div class="col-md-12 modal-dialog" >
+            <div class="modal-content">
+               <div class="modal-header">
+                   <h4 class="modal-title">Eliminar</h4>
+                   <button type="button" class="close" data-dismiss="modal">X</button>
+               </div>
+               <div class="col-md-12" style="background:#e0e0e0">
+                <div class="modal-body">
+                  ¿Esta seguro de eliminarlo?
+              </div>
+              <div class="modal-footer">
+                  <button
+                  class="btn btn-sm btn-danger"
+                  (click)="onDeleteProducto(peli.id)"
+                >
+                  Quiero eliminarlo
+                </button>
+                <button
+                  class="btn btn-sm btn-info"
+                  (click)="cancelConfirm(peli.id)"
+                  style="margin-left: 5px"
+                >
+                  Cancelar
+                </button>
+              </div>
+               </div> 
+            </div>
+        </div>
+   </div><!--end #iniciar-->
+     <!-- <div class="modal fade" id="eliminarPelicula" tabindex="-1" role="dialog" aria-labelledby="eliminarPelicula" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -49,7 +78,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
 
     </div>
   </div>
