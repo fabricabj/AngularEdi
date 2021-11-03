@@ -6,6 +6,7 @@ import { AppComponent } from './componentes/app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PeliculasComponent } from './componentes/peliculas/peliculas.component';
 import { HeaderComponent } from './componentes/header/header.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HeaderComponent } from './componentes/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule  
   ],
   providers: [],

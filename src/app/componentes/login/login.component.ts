@@ -19,20 +19,19 @@ export class LoginComponent implements OnInit {
   constructor( public userService: UsuariosService, public router: Router, public autorizacionService : AutorizacionService) {}
 
     login(){
-      const user = {nombre: this.nombre, password: this.password};
-      
+      const user = {nombre: this.nombre, contrasena: this.password};
       console.log(user);
       this.userService.login(user).subscribe( data => {
-        console.log(data);
-        if(data['success'] == false){
-          this.router.navigateByUrl('/login')
-          this.respuestaLogin = data['message'];
+        console.log("Bienvenido ok")
+      }, err => {
+        console.log(err)
+        if(err.error.text == "Bienvenido"){
+          this.router.navigateByUrl('/home')
+          this.respuestaLogin = err.error.text;
         }else{
-          this.respuestaLogin = data['message'];
-          this.autorizacionService.setLogin(data['jwt'])
-          this.router.navigateByUrl('/home');
+          this.respuestaLogin = err.error.text;
+          this.router.navigateByUrl('/login');
         }
-        
       });
     }
 
@@ -45,7 +44,7 @@ export class LoginComponent implements OnInit {
     }
 
     registro(){
-      const user = {nombre: this.nombre, password: this.password};
+      const user = {nombre: this.nombre, contrasena: this.password};
       console.log(user)
       this.userService.registro(user).subscribe( data => {
         if(data['success'] == true){

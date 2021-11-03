@@ -1,1 +1,56 @@
-<p>peliculas works!</p>
+<h1>Peliculas</h1>
+<button class="btn btn-primary">Alta</button>
+
+<div class="container">
+  <div *ngIf="peliculas" class="row">
+    <div
+      class="card"
+      style="width: 18rem"
+      *ngFor="let peli of peliculas"
+      class="col-5"
+    >
+      <img src="{{ peli.imagen }}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ peli.titulo }}</h5>
+        <p class="card-text">{{ peli.descripcion }}</p>
+        <p class="card-text">{{ peli.anio }}</p>
+        <a href="#" class="btn btn-primary m-2">Editar</a>        
+          <button type="button" (click)="borrarConfirm(peli.id_pelicula)" class="btn btn-danger" data-toggle="modal" data-target="#eliminarPelicula">
+            Eliminar
+          </button>
+      </div>
+
+      <div class="modal fade" id="eliminarPelicula" tabindex="-1" role="dialog" aria-labelledby="eliminarPelicula" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Eliminar {{peli.tilulo}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                ¿Esta seguro de eliminarlo?
+            </div>
+            <div class="modal-footer">
+                <button
+                class="btn btn-sm btn-danger"
+                (click)="onDeleteProducto(peli.id)"
+              >
+                Quiero eliminarlo
+              </button>
+              <button
+                class="btn btn-sm btn-info"
+                (click)="cancelConfirm(peli.id)"
+                style="margin-left: 5px"
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

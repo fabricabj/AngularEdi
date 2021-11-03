@@ -2,7 +2,7 @@
     <nav class="page__menu page__custom-settings menu">
         <ul class="menu__list r-list">
             <li class="menu__group"><a routerLink = "home" class="menu__link r-link text-underlined">Inicio</a></li>
-            <li class="menu__group"><a routerLink = "tienda" class="menu__link r-link text-underlined">Peliculas</a></li>
+            <li class="menu__group"><a routerLink = "peliculas" class="menu__link r-link text-underlined">Peliculas</a></li>
             <div *ngIf="(autorizacionService.authenticated$ | async) === false">
                 <li class="menu__group">
                     <a routerLink="login" class="menu__link r-link text-underlined" name="iniciar-sesion">Iniciar sesión</a>
