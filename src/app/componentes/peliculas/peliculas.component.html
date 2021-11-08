@@ -1,56 +1,179 @@
-<h1>Peliculas</h1>
-<button class="btn btn-primary">Alta</button>
+<h1 class="text-center">
+  Peliculas
+  <button class="btn btn-outline-info text-center">Agregar</button>
+</h1>
 
 <div class="container">
   <div *ngIf="peliculas" class="row">
-    <div
-      class="card"
-      style="width: 18rem"
-      *ngFor="let peli of peliculas"
-      class="col-5"
-    >
-      <img src="{{ peli.imagen }}" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{ peli.titulo }}</h5>
-        <p class="card-text">{{ peli.descripcion }}</p>
-        <p class="card-text">{{ peli.anio }}</p>
-        <a href="#" class="btn btn-primary m-2">Editar</a>        
-          <button type="button" (click)="borrarConfirm(peli.id_pelicula)" class="btn btn-danger" data-toggle="modal" data-target="#eliminarPelicula">
-            Eliminar
-          </button>
-      </div>
+    <div style="width: 18rem" *ngFor="let peli of peliculas" class="col-5 m-2">
+      <div class="card h-100">
+        <img src="{{ peli.imagen }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ peli.titulo }}</h5>
+          <p class="card-text">{{ peli.descripcion }}</p>
+          <p class="card-text">{{ peli.anio }}</p>
 
-      <div class="modal fade" id="eliminarPelicula" tabindex="-1" role="dialog" aria-labelledby="eliminarPelicula" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
+          <!-- Modal Editar -->
+
+          <ng-template #editar let-modal>
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Eliminar {{peli.tilulo}}</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <h4 class="modal-title" id="modal-basic-title">
+                Editar pelicula
+              </h4>
+              <button
+                type="button"
+                class="close"
+                aria-label="Close"
+                (click)="modal.dismiss('Cross click')"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-                ¿Esta seguro de eliminarlo?
+              <form [formGroup]="editForm">
+                <div class="form-group">
+                  <label for="titulo">Titulo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="titulo"
+                    formControlName="titulo"
+                    name="titulo"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="duracion">duracion</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="duracion"
+                    formControlName="duracion"
+                    name="duracion"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="descripcion">descripcion</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="descripcion"
+                    formControlName="descripcion"
+                    name="descripcion"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="puntaje">puntaje</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="puntaje"
+                    formControlName="puntaje"
+                    name="puntaje"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="imagen">imagen</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="imagen"
+                    formControlName="imagen"
+                    name="imagen"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="anio">anio</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="anio"
+                    formControlName="anio"
+                    name="anio"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="trailer">trailer</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="trailer"
+                    formControlName="trailer"
+                    name="trailer"
+                  />
+                </div>
+              </form>
             </div>
             <div class="modal-footer">
-                <button
-                class="btn btn-sm btn-danger"
-                (click)="onDeleteProducto(peli.id)"
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                (click)="editarPelicula()"
               >
-                Quiero eliminarlo
+                Editar
               </button>
               <button
-                class="btn btn-sm btn-info"
-                (click)="cancelConfirm(peli.id)"
-                style="margin-left: 5px"
+                type="button"
+                class="btn btn-outline-primary close"
+                (click)="modal.close('Save click'); limpiar()"
               >
                 Cancelar
               </button>
             </div>
-          </div>
+          </ng-template>
+
+          <!-- Modal Eliminar -->
+
+          <ng-template #elimiar let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">
+                Eliminar pelicula
+              </h4>
+              <button
+                type="button"
+                class="close"
+                aria-label="Close"
+                (click)="modal.dismiss('Cross click')"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>¿Esta seguro que desea eliminar {{ peli.titulo }}?</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                (click)="
+                  modal.close('Save click'); onDeleteProducto(peli.id_pelicula)
+                "
+              >
+                Eliminar
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                (click)="modal.close('Save click')"
+              >
+                Cancelar
+              </button>
+            </div>
+          </ng-template>
+        </div>
+        <div class="card-footer mt-auto">
+          <button class="btn btn-outline-danger" (click)="open(elimiar)">
+            Eliminar
+          </button>
+          <button
+            class="btn btn-outline-primary m-2"
+            (click)="open(editar); seleccionarPelicula(peli.id_pelicula)"
+          >
+            Editar
+          </button>
         </div>
       </div>
-
     </div>
   </div>
 </div>

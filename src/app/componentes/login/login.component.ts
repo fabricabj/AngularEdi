@@ -11,7 +11,7 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
 export class LoginComponent implements OnInit {
   nombre: string | undefined;
   password: string| undefined;
-
+  
   respuestaRe: string | undefined;
   respuestaLogin: string | undefined;
   
