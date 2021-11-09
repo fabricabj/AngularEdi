@@ -23,8 +23,10 @@ export class RegistrarComponent implements OnInit {
     this.userService.registro(user).subscribe( data => {
       if(data['success'] == true){
         this.respuestaRe = data['message'];
+        window.location.reload();
       }else{
         this.respuestaRe = data['message'];
+        window.location.reload();
       }
     });
   }
