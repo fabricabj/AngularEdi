@@ -25,6 +25,20 @@ export class PeliculasService {
     return this.http.post(`https://colavellabackend.herokuapp.com/eliminarpelicula/`, formData);
   }
 
+  agregarPelicula(pelicula: any): Observable<any> {
+    const formData = new FormData();
+    formData.append('titulo', pelicula.titulo);
+    formData.append('duracion', pelicula.duracion);
+    formData.append('descripcion', pelicula.descripcion);
+    formData.append('puntaje', pelicula.puntaje);
+    formData.append('imagen', pelicula.imagen);
+    formData.append('anio', pelicula.anio);
+    formData.append('trailer', pelicula.trailer);
+
+    return this.http.post(`https://colavellabackend.herokuapp.com/altapelicula`, formData);
+  }
+
+  
   editarPelicula(pelicula: any): Observable<any> {
     const formData = new FormData();
     formData.append('id_pelicula', pelicula.id_pelicula);

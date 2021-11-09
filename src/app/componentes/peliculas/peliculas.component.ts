@@ -84,6 +84,14 @@ export class PeliculasComponent implements OnInit {
     window.location.reload();
   }
 
+  altaPelicula() {
+    const pelicula = this.createFromForm();
+    this.peliculasService.agregarPelicula(pelicula).subscribe( data => {
+      console.log(data);
+    });
+    window.location.reload();
+  }
+
   limpiar() {
     this.editForm.patchValue({
       id_pelicula: "",

@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       }, err => {
         console.log(err)
         if(err.error.text == "Bienvenido"){
+          this.router.navigateByUrl('/home')
           this.router.navigateByUrl('/peliculas')
           this.respuestaLogin = err.error.text;
         }else{
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
 
     getLogin(){
       if(this.autorizacionService.getToken() === true){
+        this.router.navigateByUrl('/home')
         this.router.navigateByUrl('/peliculasS');
       }else{
 
