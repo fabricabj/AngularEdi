@@ -7,6 +7,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { PeliculasComponent } from './componentes/peliculas/peliculas.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistrarComponent } from './componentes/registrar/registrar.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     PeliculasComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegistrarComponent
   ],
   
   imports: [
