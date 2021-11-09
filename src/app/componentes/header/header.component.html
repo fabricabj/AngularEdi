@@ -8,7 +8,7 @@
                     <a routerLink="login" class="menu__link r-link text-underlined" name="iniciar-sesion">Iniciar sesión</a>
                 </li>
                 <li class="menu__group">
-                    <a routerLink="Registrarse" class="menu__link r-link text-underlined" name="Registrarse">Registrarse</a>
+                    <a routerLink="registrarse" class="menu__link r-link text-underlined" name="Registrarse">Registrarse</a>
                 </li>
             </div>
             <div *ngIf = "(autorizacionService.authenticated$ | async) === true">
