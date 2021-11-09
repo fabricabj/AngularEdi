@@ -30,12 +30,8 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-=======
-              "node_modules/bootstrap/dist/css/bootstrap.css",
->>>>>>> bfd4c83f580dbbdd3ff5ba63463a2957711b5cc4
               "src/styles.css"
             ],
             "scripts": [
