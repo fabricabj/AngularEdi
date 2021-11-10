@@ -1,0 +1,28 @@
+.body{
+    background-color:#1565c0 ;
+    color:white;
+}
+.container-fluid a{
+    color:white;
+    font-size: 20px;
+}
+.container-fluid a:hover{
+    color:#000;
+    background:#bbdefb;
+
+  
+}
+.login li a{
+    background:#1e88e5;
+}
+.login li a:hover{
+    background:white;
+    color:#000;
+}
+.session li button{
+    background:#1e88e5;
+}
+.session li button:hover{
+    background:white;
+    color:#000;
+}

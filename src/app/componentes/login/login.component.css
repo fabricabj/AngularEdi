@@ -1,0 +1,24 @@
+.logoUser img{
+    width:120px;
+    height:120px;
+    margin-top:-80px;
+    border-radius:100px;
+    background:#2196f3;
+    padding:20px;
+    opacity:0.8;
+    color:white;
+  }
+  .logoUser form label{
+       float:left;
+  }
+  .body {
+	background: url('https://p4.wallpaperbetter.com/wallpaper/872/906/514/light-movie-film-film-projector-wallpaper-preview.jpg') no-repeat fixed center;
+    background-size: cover;
+
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	
+}
