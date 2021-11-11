@@ -7,15 +7,8 @@
 
 <ng-template #agregar let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">
-      Agregar pelicula
-    </h4>
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    >
+    <h4 class="modal-title" id="modal-basic-title">Agregar pelicula</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -23,93 +16,39 @@
     <form [formGroup]="editForm">
       <div class="form-group">
         <label for="titulo">Titulo</label>
-        <input
-          type="text"
-          class="form-control"
-          id="titulo"
-          formControlName="titulo"
-          name="titulo"
-        />
+        <input type="text" class="form-control" id="titulo" formControlName="titulo" name="titulo"/>
       </div>
       <div class="form-group">
         <label for="duracion">duracion</label>
-        <input
-          type="text"
-          class="form-control"
-          id="duracion"
-          formControlName="duracion"
-          name="duracion"
-        />
+        <input type="text" class="form-control" id="duracion" formControlName="duracion" name="duracion"/>
       </div>
       <div class="form-group">
         <label for="descripcion">descripcion</label>
-        <input
-          type="text"
-          class="form-control"
-          id="descripcion"
-          formControlName="descripcion"
-          name="descripcion"
-        />
+        <input type="text" class="form-control" id="descripcion" formControlName="descripcion" name="descripcion"/>
       </div>
       <div class="form-group">
         <label for="puntaje">puntaje</label>
-        <input
-          type="text"
-          class="form-control"
-          id="puntaje"
-          formControlName="puntaje"
-          name="puntaje"
-        />
+        <input type="text" class="form-control" id="puntaje" formControlName="puntaje" name="puntaje"/>
       </div>
       <div class="form-group">
         <label for="imagen">imagen</label>
-        <input
-          type="text"
-          class="form-control"
-          id="imagen"
-          formControlName="imagen"
-          name="imagen"
-        />
+        <input type="text" class="form-control" id="imagen" formControlName="imagen" name="imagen"/>
       </div>
 
       <div class="form-group">
         <label for="anio">anio</label>
-        <input
-          type="text"
-          class="form-control"
-          id="anio"
-          formControlName="anio"
-          name="anio"
-        />
+        <input type="text" class="form-control" id="anio" formControlName="anio" name="anio"/>
       </div>
 
       <div class="form-group">
         <label for="trailer">trailer</label>
-        <input
-          type="text"
-          class="form-control"
-          id="trailer"
-          formControlName="trailer"
-          name="trailer"
-        />
+        <input type="text" class="form-control" id="trailer" formControlName="trailer" name="trailer"/>
       </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-outline-info"
-      (click)="altaPelicula()"
-    >
-      Agregar
-    </button>
-    <button
-      type="button"
-      class="btn btn-outline-primary close"
-      (click)="modal.close('Save click'); limpiar()"
-    >
-      Cancelar
-    </button>
+    <button type="button" class="btn btn-outline-info" (click)="altaPelicula()">Agregar</button>
+    <button type="button" class="btn btn-outline-primary close" (click)="modal.close('Save click'); limpiar()">Cancelar</button>
   </div>
 </ng-template>
 
@@ -127,15 +66,8 @@
 
           <ng-template #editar let-modal>
             <div class="modal-header">
-              <h4 class="modal-title" id="modal-basic-title">
-                Editar pelicula
-              </h4>
-              <button
-                type="button"
-                class="close"
-                aria-label="Close"
-                (click)="modal.dismiss('Cross click')"
-              >
+              <h4 class="modal-title" id="modal-basic-title">Editar pelicula</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -143,93 +75,39 @@
               <form [formGroup]="editForm">
                 <div class="form-group">
                   <label for="titulo">Titulo</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="titulo"
-                    formControlName="titulo"
-                    name="titulo"
-                  />
+                  <input type="text" class="form-control" id="titulo" formControlName="titulo" name="titulo"/>
                 </div>
                 <div class="form-group">
                   <label for="duracion">duracion</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="duracion"
-                    formControlName="duracion"
-                    name="duracion"
-                  />
+                  <input type="text" class="form-control" id="duracion" formControlName="duracion" name="duracion"/>
                 </div>
                 <div class="form-group">
                   <label for="descripcion">descripcion</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="descripcion"
-                    formControlName="descripcion"
-                    name="descripcion"
-                  />
+                  <input type="text" class="form-control" id="descripcion" formControlName="descripcion" name="descripcion"/>
                 </div>
                 <div class="form-group">
                   <label for="puntaje">puntaje</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="puntaje"
-                    formControlName="puntaje"
-                    name="puntaje"
-                  />
+                  <input type="text" class="form-control" id="puntaje" formControlName="puntaje" name="puntaje"/>
                 </div>
                 <div class="form-group">
                   <label for="imagen">imagen</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="imagen"
-                    formControlName="imagen"
-                    name="imagen"
-                  />
+                  <input type="text" class="form-control" id="imagen" formControlName="imagen" name="imagen"/>
                 </div>
 
                 <div class="form-group">
                   <label for="anio">anio</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="anio"
-                    formControlName="anio"
-                    name="anio"
-                  />
+                  <input type="text" class="form-control" id="anio" formControlName="anio" name="anio"/>
                 </div>
 
                 <div class="form-group">
                   <label for="trailer">trailer</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="trailer"
-                    formControlName="trailer"
-                    name="trailer"
-                  />
+                  <input type="text" class="form-control" id="trailer" formControlName="trailer" name="trailer"/>
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-outline-info"
-                (click)="editarPelicula()"
-              >
-                Editar
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-primary close"
-                (click)="modal.close('Save click'); limpiar()"
-              >
-                Cancelar
-              </button>
+              <button type="button" class="btn btn-outline-info" (click)="editarPelicula()">Editar</button>
+              <button type="button" class="btn btn-outline-primary close" (click)="modal.close('Save click'); limpiar()">Cancelar</button>
             </div>
           </ng-template>
 
@@ -237,15 +115,8 @@
 
           <ng-template #elimiar let-modal>
             <div class="modal-header">
-              <h4 class="modal-title" id="modal-basic-title">
-                Eliminar pelicula
-              </h4>
-              <button
-                type="button"
-                class="close"
-                aria-label="Close"
-                (click)="modal.dismiss('Cross click')"
-              >
+              <h4 class="modal-title" id="modal-basic-title">Eliminar pelicula</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -253,35 +124,14 @@
               <p>¿Esta seguro que desea eliminar {{ peli.titulo }}?</p>
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-outline-danger "
-                (click)="
-                  modal.close('Save click'); onDeleteProducto(peli.id_pelicula)
-                "
-              >
-                Eliminar
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-primary"
-                (click)="modal.close('Save click')"
-              >
-                Cancelar
-              </button>
+              <button type="button" class="btn btn-outline-danger " (click)="modal.close('Save click'); onDeleteProducto(peli.id_pelicula)">Eliminar</button>
+              <button type="button" class="btn btn-outline-primary"(click)="modal.close('Save click')">Cancelar</button>
             </div>
           </ng-template>
         </div>
         <div class="card-footer mt-auto">
-          <button class="btn btn-outline-danger" (click)="open(elimiar)">
-            Eliminar
-          </button>
-          <button
-            class="btn btn-outline-primary m-2"
-            (click)="open(editar); seleccionarPelicula(peli.id_pelicula)"
-          >
-            Editar
-          </button>
+          <button class="btn btn-outline-danger" (click)="open(elimiar)">Eliminar</button>
+          <button class="btn btn-outline-primary m-2" (click)="open(editar); seleccionarPelicula(peli.id_pelicula)">Editar</button>
         </div>
       </div>
     </div>
