@@ -5,16 +5,13 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AutorizacionService {
-  authenticated$ = new BehaviorSubject(false);
 
   public setLogin(jwt: any){
     localStorage.setItem('token', jwt)
-    this.authenticated$.next(true)
   }
 
   public logOut(){
     localStorage.removeItem('token');
-    this.authenticated$.next(false);
     window.location.href = "/login";
   }
 

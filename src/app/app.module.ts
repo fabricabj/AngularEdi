@@ -8,6 +8,7 @@ import { PeliculasComponent } from './componentes/peliculas/peliculas.component'
 import { HeaderComponent } from './componentes/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import { OrdenarPipe } from './pipes/ordenar.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { RegistrarComponent } from './componentes/registrar/registrar.component'
     LoginComponent,
     PeliculasComponent,
     HeaderComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    OrdenarPipe
   ],
   
   imports: [

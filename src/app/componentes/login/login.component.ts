@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         console.log(err)
         if(err.error.text == "Bienvenido"){
           this.router.navigateByUrl('/home')
-          this.autorizacionService.setLogin(err['jwt'])
+          this.autorizacionService.setLogin(err.error.text)
           this.router.navigateByUrl('/peliculas')
           this.respuestaLogin = err.error.text;
         }else{

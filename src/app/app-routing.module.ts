@@ -4,10 +4,11 @@ import { LoginComponent } from './componentes/login/login.component';
 import { PeliculasComponent } from './componentes/peliculas/peliculas.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: "home", redirectTo: ""},
-  {path: "peliculas", component: PeliculasComponent, pathMatch:"full"},
+  {path: "peliculas", component: PeliculasComponent, canActivate: [AuthGuard], pathMatch:"full"},
   {path: "login", component: LoginComponent, pathMatch:"full"},
   {path: "registrarse", component: RegistrarComponent, pathMatch:"full"},
   {path: "**", redirectTo: '/404'},

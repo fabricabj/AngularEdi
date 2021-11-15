@@ -54,7 +54,7 @@
 
 <div class="container">
   <div *ngIf="peliculas" class="row">
-    <div style="width: 18rem" *ngFor="let peli of peliculas" class="col-5 m-2">
+    <div style="width: 18rem" *ngFor="let peli of peliculas | ordenar" class="col-5 m-2">
       <div class="card h-100">
         <img src="{{ peli.imagen }}" class="card-img-top" alt="..." />
         <div class="card-body">
