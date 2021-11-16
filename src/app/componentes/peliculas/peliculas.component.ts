@@ -11,9 +11,6 @@ import { FormBuilder } from '@angular/forms';
 export class PeliculasComponent implements OnInit {
 
   peliculas: Array<any> = [];
-  confirm: number = 0; 
-  display: string = 'none'
-  closeResult: string = '';
 
   editForm = this.fb.group({
     id_pelicula: [],
@@ -26,13 +23,10 @@ export class PeliculasComponent implements OnInit {
     trailer: [],
   });
 
-  peliculaEdit: any;
-
   constructor(public peliculasService: PeliculasService, private modalService: NgbModal, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.peliculasService.getPeliculas().subscribe(data => {
-      console.log(data)
       this.peliculas = data;
     }); 
   }

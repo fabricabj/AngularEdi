@@ -8,10 +8,12 @@ export class OrdenarPipe implements PipeTransform {
   transform(value: Array<any>): Array<any> {
     if(!value) return [];
 
-    return value.sort(this.comparar);
+    return value.sort(this.ordenar);
   }
 
-  comparar( a: any, b: any ) {
+  // Funcion para ordenar objetos dentro de un Array
+  
+  ordenar( a: any, b: any ) {
     if ( a.titulo < b.titulo ){
       return -1;
     }

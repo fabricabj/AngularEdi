@@ -113,7 +113,7 @@
 
           <!-- Modal Eliminar -->
 
-          <ng-template #elimiar let-modal>
+          <ng-template #eliminar let-modal>
             <div class="modal-header">
               <h4 class="modal-title" id="modal-basic-title">Eliminar pelicula</h4>
               <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -121,7 +121,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>¿Esta seguro que desea eliminar {{ peli.titulo }}?</p>
+              <p>¿Esta seguro que desea eliminar <b>{{ peli.titulo }}</b> ?</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-danger " (click)="modal.close('Save click'); onDeleteProducto(peli.id_pelicula)">Eliminar</button>
@@ -130,7 +130,7 @@
           </ng-template>
         </div>
         <div class="card-footer mt-auto">
-          <button class="btn btn-outline-danger" (click)="open(elimiar)">Eliminar</button>
+          <button class="btn btn-outline-danger" (click)="open(eliminar)">Eliminar</button>
           <button class="btn btn-outline-primary m-2" (click)="open(editar); seleccionarPelicula(peli.id_pelicula)">Editar</button>
         </div>
       </div>
