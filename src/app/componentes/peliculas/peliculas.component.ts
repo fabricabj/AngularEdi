@@ -31,7 +31,7 @@ export class PeliculasComponent implements OnInit {
     }); 
   }
 
-  onDeleteProducto(id: number) {
+  onDeletePelicula(id: number) {
     this.peliculasService.deletePelicula(id).subscribe( data => {
       console.log(data);
     });

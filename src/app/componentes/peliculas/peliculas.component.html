@@ -124,7 +124,7 @@
               <p>¿Esta seguro que desea eliminar <b>{{ peli.titulo }}</b> ?</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-danger " (click)="modal.close('Save click'); onDeleteProducto(peli.id_pelicula)">Eliminar</button>
+              <button type="button" class="btn btn-outline-danger " (click)="modal.close('Save click'); onDeletePelicula(peli.id_pelicula)">Eliminar</button>
               <button type="button" class="btn btn-outline-primary"(click)="modal.close('Save click')">Cancelar</button>
             </div>
           </ng-template>

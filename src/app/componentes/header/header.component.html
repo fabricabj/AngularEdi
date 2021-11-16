@@ -1,35 +1,11 @@
 <div class="body">
-  <!--  <nav class="page__menu page__custom-settings menu">
-        <ul class="menu__list r-list">
-            <li class="menu__group"><a routerLink = "home" class="menu__link r-link text-underlined">Inicio</a></li>
-            <li class="menu__group"><a routerLink = "peliculas" class="menu__link r-link text-underlined">Peliculas</a></li>
-            <div *ngIf="(autorizacionService.authenticated$ | async) === false">
-                <li class="menu__group">
-                    <a routerLink="login" class="menu__link r-link text-underlined" name="iniciar-sesion">Iniciar sesión</a>
-                </li>
-                <li class="menu__group">
-                    <a routerLink="registrarse" class="menu__link r-link text-underlined" name="Registrarse">Registrarse</a>
-                </li>
-            </div>
-            <div *ngIf = "(autorizacionService.authenticated$ | async) === true">
-                <li class="menu__group">
-                    <button (click)="logOut()" class="menu__link r-link text-underlined" name="Cerrar sesión">Cerrar Sesión</button>
-                </li>
-            </div>
-        </ul>
-    </nav>-->
     <nav class="navbar navbar-expand-lg navbar-light menu">
         <div class="container-fluid">
-          <a routerLink = "home" class="nav-link" *ngIf="autorizacionService.getToken()">Inicio</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" *ngIf="autorizacionService.getToken()">
               <li class="nav-item">
                 <a routerLink = "peliculas" class="nav-link">Peliculas</a>
               </li>
-              
             </ul>
           </div>
           <nav class="navbar navbar-expand-lg navbar-light" style="float:right">
