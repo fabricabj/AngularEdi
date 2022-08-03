@@ -6,10 +6,10 @@ import { RegistrarComponent } from './componentes/registrar/registrar.component'
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+  {path: "", component: LoginComponent, pathMatch:"full"},
   {path: "peliculas", component: PeliculasComponent, canActivate: [AuthGuard], pathMatch:"full"},
   {path: "login", component: LoginComponent, pathMatch:"full"},
   {path: "registrarse", component: RegistrarComponent, pathMatch:"full"},
-  {path: "**", redirectTo: '/404'},
   
 ];
 

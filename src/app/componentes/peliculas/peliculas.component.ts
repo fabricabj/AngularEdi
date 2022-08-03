@@ -35,6 +35,7 @@ export class PeliculasComponent implements OnInit {
     this.peliculasService.deletePelicula(id).subscribe( data => {
       console.log(data);
     });
+
     window.location.reload();
   }
 
